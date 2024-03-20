@@ -33,11 +33,11 @@ class Main:
         useragents = self.ReadFile('useragents.txt','r')
         return choice(useragents)
 
-    def PrintText(self,bracket_color:Fore,text_in_bracket_color:Fore,text_in_bracket,text):
+    def PrintText(self, bracket_color, text_in_bracket_color, text_in_bracket, text):
         self.lock.acquire()
         stdout.flush()
         text = text.encode('ascii','replace').decode()
-        stdout.write(Style.BRIGHT+bracket_color+'['+text_in_bracket_color+text_in_bracket+bracket_color+'] '+bracket_color+text+'\n')
+        stdout.write(Style.BRIGHT + bracket_color + '[' + text_in_bracket_color + text_in_bracket + bracket_color + '] ' + bracket_color + text + '\n')
         self.lock.release()
 
     def GetRandomProxyForStream(self):
